@@ -221,7 +221,7 @@ class _TimelineEntry extends StatelessWidget {
             if (!isFirst)
               Container(
                 width: 2,
-                height: 16,
+                height: 50,
                 color: Colors.grey.shade300,
               ),
             Container(
@@ -237,7 +237,7 @@ class _TimelineEntry extends StatelessWidget {
             if (!isLast)
               Container(
                 width: 2,
-                height: 34,
+                height: 60,
                 color: Colors.grey.shade300,
               ),
           ],
