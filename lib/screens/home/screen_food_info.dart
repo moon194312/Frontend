@@ -27,7 +27,7 @@ class FoodInfoScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 밥
-              buildFoodSection(context, '🍚 국밥', meal.rice),
+              buildFoodSection(context, '🍚 밥', meal.rice),
               const SizedBox(height: 20),
 
               // 국
