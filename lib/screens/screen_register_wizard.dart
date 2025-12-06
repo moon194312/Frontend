@@ -112,6 +112,9 @@ class _RegisterWizardScreenState extends State<RegisterWizardScreen> {
         postCode: p.postCode,
         addressDetail: p.addressDetail,
       );
+
+      p.reset();
+      
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (_) => const LoginScreen()));
     } else {

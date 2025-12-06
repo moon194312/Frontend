@@ -1,17 +1,13 @@
 // service_health_info.dart
 
-import 'dart:developer';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:frontend/models/health_info.dart';
 import 'package:frontend/services/api_constants.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
 import 'package:frontend/services/user_storage.dart';
 
 class HealthInfoService {
   static Future<void> uploadHealthInfo(HealthInfo info) async {
-    // final prefs = await SharedPreferences.getInstance();
-    // final token = prefs.getString('jwt_token');
     final token = await UserStorage.loadToken();
 
     if (token == null) {
@@ -28,12 +24,6 @@ class HealthInfoService {
       },
       body: jsonEncode(info.toJson()),
     );
-
-    log('📡 요청 URL: $url');
-    log('📤 Authorization: Bearer $token');
-    log('📦 전송 데이터: ${jsonEncode(info.toJson())}');
-    log('📥 응답 statusCode: ${response.statusCode}');
-    log('📥 응답 body: ${response.body}');
 
     if (response.statusCode != 200) {
       final body = jsonDecode(response.body);
